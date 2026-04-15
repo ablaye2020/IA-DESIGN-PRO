@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA Design Pro | Création de designs par IA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>PURGE DESIGN PRO - Créateur visuel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,90 +13,44 @@
         }
 
         body {
-            background: radial-gradient(circle at 20% 50%, #0a0a0a 0%, #000000 100%);
-            color: #ffffff;
-            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at 20% 50%, #0a0000 0%, #000000 100%);
+            color: #ff0000;
+            font-family: 'Orbitron', monospace;
             min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Effet de particules animées */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .particle {
-            position: absolute;
-            background: rgba(255, 107, 107, 0.3);
-            border-radius: 50%;
-            animation: float 15s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.5; }
-            90% { opacity: 0.5; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            padding: 20px;
         }
 
         .container {
-            position: relative;
-            z-index: 1;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
         }
 
-        /* Header */
         .header {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 48px;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px #ff0000;
         }
 
         .badge {
             display: inline-block;
-            background: rgba(255, 107, 107, 0.2);
-            border: 1px solid rgba(255, 107, 107, 0.5);
-            border-radius: 100px;
-            padding: 8px 20px;
+            background: rgba(255, 0, 0, 0.2);
+            border: 1px solid #ff0000;
+            border-radius: 20px;
+            padding: 5px 15px;
             font-size: 12px;
-            font-weight: 500;
-            color: #ff6b6b;
             margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-        }
-
-        h1 {
-            font-size: 56px;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ff6b6b, #ff8e53, #ff6b6b);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient 3s ease infinite;
-            margin-bottom: 20px;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .subtitle {
-            font-size: 18px;
-            color: #a0a0a0;
-            max-width: 600px;
-            margin: 0 auto;
+            color: #ff4444;
+            font-size: 14px;
         }
 
-        /* Grille principale */
         .main-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -109,377 +63,300 @@
             }
         }
 
-        /* Cartes */
         .card {
-            background: rgba(20, 20, 30, 0.7);
-            backdrop-filter: blur(20px);
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 107, 107, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            background: rgba(20, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #ff0000;
+            border-radius: 20px;
+            padding: 25px;
         }
 
         .card h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card h2 span {
-            font-size: 32px;
-        }
-
-        .card p {
-            color: #888;
-            margin-bottom: 25px;
-            font-size: 14px;
-        }
-
-        /* Formulaire */
-        .input-group {
             margin-bottom: 20px;
+            font-size: 20px;
+            border-left: 3px solid #ff0000;
+            padding-left: 10px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
         }
 
         label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 500;
-            font-size: 13px;
-            color: #ccc;
+            font-size: 12px;
+            color: #ff8888;
         }
 
         input, select, textarea {
             width: 100%;
-            padding: 14px 16px;
+            padding: 12px;
             background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            border: 1px solid #ff0000;
+            border-radius: 8px;
             color: white;
-            font-size: 14px;
-            transition: all 0.3s ease;
+            font-family: 'Orbitron', monospace;
         }
 
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #ff6b6b;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        input[type="color"] {
-            height: 50px;
-            cursor: pointer;
-        }
-
-        /* Bouton générer */
-        .btn-generate {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+        button {
+            background: linear-gradient(135deg, #ff0000, #990000);
+            color: white;
             border: none;
-            border-radius: 12px;
-            color: white;
-            font-weight: 700;
-            font-size: 16px;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            width: 100%;
+            font-family: 'Orbitron', monospace;
             margin-top: 10px;
         }
 
-        .btn-generate:hover {
+        button:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
         }
 
-        /* Zone de résultat */
         .result-area {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            min-height: 400px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            padding: 20px;
+            min-height: 450px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
 
-        .result-placeholder {
-            text-align: center;
-            color: #666;
-        }
-
-        .result-placeholder span {
-            font-size: 64px;
-            margin-bottom: 20px;
-            display: block;
-        }
-
         .design-preview {
-            background: white;
-            border-radius: 20px;
+            background: #0a0a0a;
+            border-radius: 15px;
             padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            margin-bottom: 15px;
         }
 
-        .btn-save {
-            background: linear-gradient(135deg, #00aa00, #008800);
-            padding: 12px 24px;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
+        .btn-save, .btn-download {
+            background: #00aa00;
             margin: 5px;
+            width: auto;
+            padding: 10px 20px;
         }
 
         .btn-download {
-            background: linear-gradient(135deg, #0066cc, #004499);
-            padding: 12px 24px;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            margin: 5px;
+            background: #0066cc;
         }
 
-        /* Galerie */
         .gallery-section {
             margin-top: 50px;
         }
 
-        .gallery-title {
-            font-size: 28px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
+            margin-top: 20px;
         }
 
         .gallery-card {
-            background: rgba(20, 20, 30, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
+            background: rgba(20, 0, 0, 0.7);
+            border: 1px solid #ff0000;
+            border-radius: 10px;
             padding: 15px;
             text-align: center;
-            transition: all 0.3s ease;
             cursor: pointer;
-        }
-
-        .gallery-card:hover {
-            transform: translateY(-5px);
-            background: rgba(30, 30, 40, 0.8);
-        }
-
-        .gallery-card img {
-            width: 100%;
-            border-radius: 12px;
-            margin-bottom: 10px;
-        }
-
-        .gallery-card .name {
-            font-weight: 600;
-            font-size: 13px;
-            margin-bottom: 5px;
-        }
-
-        .gallery-card .date {
-            font-size: 10px;
-            color: #888;
         }
 
         .delete-btn {
-            background: rgba(255, 68, 68, 0.2);
-            color: #ff4444;
-            border: 1px solid #ff4444;
+            background: #ff0000;
+            margin-top: 10px;
+            width: auto;
             padding: 5px 10px;
-            border-radius: 8px;
             font-size: 11px;
-            cursor: pointer;
-            margin-top: 8px;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.5s ease forwards;
         }
     </style>
 </head>
 <body>
-    <div class="particles" id="particles"></div>
-
     <div class="container">
         <div class="header">
-            <div class="badge">✨ CRÉATION PAR IA ✨</div>
-            <h1>IA DESIGN PRO</h1>
-            <div class="subtitle">Générez des logos, flyers et cartes de visite professionnels en quelques secondes</div>
+            <div class="badge">⚔️ PURGE DESIGN PRO ⚔️</div>
+            <h1>INFO PURGE 24</h1>
+            <div class="subtitle">Créez des bannières, logos et récompenses pour la communauté</div>
         </div>
 
         <div class="main-grid">
-            <!-- Colonne gauche : Formulaire -->
             <div class="card">
-                <h2><span>🎨</span> Créer mon design</h2>
-                <p>Remplissez le formulaire et laissez l'IA faire le reste</p>
-
+                <h2>🎨 CRÉER UN DESIGN</h2>
+                
                 <div class="input-group">
-                    <label>📋 Type de design</label>
+                    <label>📋 TYPE DE DESIGN</label>
                     <select id="type">
-                        <option value="logo">🏢 Logo</option>
-                        <option value="flyer">📄 Flyer / Affiche</option>
-                        <option value="carte">💳 Carte de visite</option>
+                        <option value="banniere_clan">🏆 Bannière de clan</option>
+                        <option value="carte_purgeur">👑 Carte de purgeur</option>
+                        <option value="affiche_info">📰 Affiche INFO PURGE</option>
+                        <option value="logo_sombre">💀 Logo sombre</option>
+                        <option value="fleur_sombre">🌸 Fleur sauvage / Sombre</option>
+                        <option value="recompense_premium">🏅 Récompense Premium</option>
                     </select>
                 </div>
 
                 <div class="input-group">
-                    <label>📝 Nom / Texte principal</label>
-                    <input type="text" id="nom" placeholder="Ex: Beauty Salon, Tech Pro, Restaurant Le Goût">
+                    <label>📝 NOM / TEXTE PRINCIPAL</label>
+                    <input type="text" id="nom" placeholder="Ex: LES SEPTSOMBRES, Fleur sauvagesaori, LA PERFECTION">
                 </div>
 
                 <div class="input-group">
-                    <label>🎨 Couleur principale</label>
-                    <input type="color" id="couleur" value="#ff6b6b">
+                    <label>🏷️ SOUS-TITRE (optionnel)</label>
+                    <input type="text" id="soustitre" placeholder="Ex: MEILLEUR PURGEUR, Âme sauvage, Ban or spam">
                 </div>
 
                 <div class="input-group">
-                    <label>🖼️ Icône / Symbole</label>
-                    <select id="icone">
-                        <option value="⭐">⭐ Étoile</option>
-                        <option value="🔥">🔥 Feu</option>
-                        <option value="💎">💎 Diamant</option>
-                        <option value="❤️">❤️ Cœur</option>
-                        <option value="👍">👍 Pouce</option>
-                        <option value="🎨">🎨 Art</option>
-                        <option value="🚀">🚀 Fusée</option>
-                        <option value="💼">💼 Briefcase</option>
-                    </select>
+                    <label>🎨 COULEUR PRINCIPALE</label>
+                    <input type="color" id="couleur" value="#ff0000">
                 </div>
 
                 <div class="input-group">
-                    <label>📝 Description (optionnel)</label>
-                    <textarea id="description" rows="2" placeholder="Décrivez votre style : moderne, élégant, minimaliste, luxe..."></textarea>
+                    <label>📊 STATISTIQUES / PRIX (optionnel)</label>
+                    <input type="text" id="stats" placeholder="Ex: KILLS: 2650 | 10000 LVL 1">
                 </div>
 
-                <button class="btn-generate" onclick="genererDesign()">
-                    ✨ GÉNÉRER MON DESIGN ✨
-                </button>
+                <button onclick="genererDesignPurge()">⚔️ GÉNÉRER LE DESIGN ⚔️</button>
             </div>
 
-            <!-- Colonne droite : Résultat -->
             <div class="card">
-                <h2><span>🖼️</span> Aperçu</h2>
-                <p>Votre design apparaîtra ici</p>
-                
+                <h2>🖼️ APERÇU</h2>
                 <div id="resultat" class="result-area">
-                    <div class="result-placeholder">
-                        <span>🎨</span>
-                        <p>Cliquez sur "Générer mon design"<br>pour voir le résultat</p>
+                    <div style="text-align: center; color: #666;">
+                        <div style="font-size: 48px;">⚔️</div>
+                        <p>Cliquez sur "Générer"<br>pour créer votre design PURGE</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Galerie des designs sauvegardés -->
         <div class="gallery-section">
-            <div class="gallery-title">
-                <h2>📚 Mes designs sauvegardés</h2>
-            </div>
+            <h2>📚 MES CRÉATIONS PURGE</h2>
             <div class="gallery-grid" id="gallery-grid">
-                <p style="color: #888; text-align: center;">Aucun design sauvegardé</p>
+                <p style="color: #666;">Aucune création sauvegardée</p>
             </div>
         </div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script>
         let designsSauvegardes = [];
 
-        // Générer des particules aléatoires
-        function genererParticules() {
-            const container = document.getElementById('particles');
-            for(let i = 0; i < 50; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                const size = Math.random() * 5 + 2;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 15 + 's';
-                particle.style.animationDuration = Math.random() * 10 + 10 + 's';
-                container.appendChild(particle);
-            }
-        }
-
-        // Générer un design
-        function genererDesign() {
+        function genererDesignPurge() {
             const type = document.getElementById('type').value;
             let nom = document.getElementById('nom').value;
+            const soustitre = document.getElementById('soustitre').value;
             const couleur = document.getElementById('couleur').value;
-            const icone = document.getElementById('icone').value;
-            const description = document.getElementById('description').value;
+            const stats = document.getElementById('stats').value;
             
-            if(!nom) {
-                nom = "Mon Design";
-            }
+            if(!nom) nom = "PURGEUR";
             
             let designHTML = "";
-            let largeur = 400;
+            let largeur = 500;
             let hauteur = 400;
             
-            if(type === "logo") {
+            if(type === "banniere_clan") {
+                hauteur = 250;
+                designHTML = `
+                    <div style="background: linear-gradient(135deg, #000000, ${couleur}); width: ${largeur}px; height: ${hauteur}px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 15px; border: 2px solid ${couleur}; box-shadow: 0 0 30px ${couleur};">
+                        <div style="font-size: 48px; margin-bottom: 10px;">⚔️</div>
+                        <div style="font-size: 28px; font-weight: bold; letter-spacing: 3px;">${nom}</div>
+                        <div style="font-size: 14px; margin-top: 10px; color: ${couleur};">${soustitre || "CLAN D'ÉLITE"}</div>
+                        <div style="font-size: 11px; margin-top: 15px;">INFO PURGE 24 | OFFICIEL</div>
+                    </div>
+                `;
+            }
+            
+            if(type === "carte_purgeur") {
+                hauteur = 320;
+                designHTML = `
+                    <div style="background: linear-gradient(135deg, #0a0a0a, #1a0000); width: ${largeur}px; height: ${hauteur}px; border: 2px solid ${couleur}; border-radius: 15px; padding: 20px; position: relative;">
+                        <div style="position: absolute; top: 10px; right: 15px; font-size: 12px; color: ${couleur};">#PURGE</div>
+                        <div style="text-align: center; margin-top: 20px;">
+                            <div style="font-size: 40px;">👑</div>
+                            <div style="font-size: 24px; font-weight: bold; margin: 10px 0;">${nom}</div>
+                            <div style="font-size: 12px; color: ${couleur};">${soustitre || "PURGEUR D'ÉLITE"}</div>
+                            <div style="border-top: 1px solid ${couleur}; margin: 15px 0; padding-top: 10px; font-size: 11px;">${stats || "⚔️ KILLS: 2650 | 💀 DMG: 1637"}</div>
+                            <div style="font-size: 10px; margin-top: 10px;">ID: 7483121851 | LVL 7.3</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            if(type === "affiche_info") {
+                hauteur = 500;
+                designHTML = `
+                    <div style="background: linear-gradient(135deg, #000000, ${couleur}); width: ${largeur}px; height: ${hauteur}px; border: 3px solid ${couleur}; border-radius: 20px; padding: 20px; text-align: center;">
+                        <div style="font-size: 14px; color: ${couleur}; letter-spacing: 2px;">INFO PURGE 24</div>
+                        <div style="font-size: 32px; font-weight: bold; margin: 20px 0; text-transform: uppercase;">${nom}</div>
+                        <div style="border: 1px solid ${couleur}; margin: 15px 0;"></div>
+                        <div style="font-size: 18px; margin: 15px 0;">${soustitre || "ÉVÉNEMENT SPÉCIAL"}</div>
+                        <div style="font-size: 12px; margin-top: 20px;">"Le respect ne se demande pas" - Joyboy</div>
+                        <div style="margin-top: 30px;">
+                            <div style="display: inline-block; background: ${couleur}; color: black; padding: 5px 15px; border-radius: 20px;">PURGE</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            if(type === "logo_sombre") {
                 hauteur = 400;
                 designHTML = `
-                    <div style="background: ${couleur}; width: ${largeur}px; height: ${hauteur}px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 50%; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
-                        <div style="font-size: 80px;">${icone}</div>
-                        <div style="font-size: 28px; font-weight: 800; margin-top: 20px; color: white; text-align: center;">${nom}</div>
-                        <div style="font-size: 14px; margin-top: 10px; color: rgba(255,255,255,0.8);">⭐️⭐️⭐️⭐️⭐️</div>
+                    <div style="background: #000000; width: ${largeur}px; height: ${hauteur}px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 50%; border: 3px solid ${couleur}; box-shadow: 0 0 40px ${couleur};">
+                        <div style="font-size: 60px;">💀</div>
+                        <div style="font-size: 24px; font-weight: bold; margin-top: 15px; letter-spacing: 3px;">${nom}</div>
+                        <div style="font-size: 10px; margin-top: 10px; color: ${couleur};">INFO PURGE 24</div>
                     </div>
                 `;
             }
             
-            if(type === "flyer") {
-                hauteur = 600;
+            if(type === "fleur_sombre") {
+                hauteur = 450;
+                const couleurFleur = couleur === "#ff0000" ? "#ff69b4" : couleur;
                 designHTML = `
-                    <div style="background: linear-gradient(135deg, ${couleur}, #000); width: ${largeur}px; height: ${hauteur}px; display: flex; flex-direction: column; justify-content: center; align-items: center; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border-radius: 20px;">
-                        <div style="font-size: 64px; margin-bottom: 20px;">${icone}</div>
-                        <div style="font-size: 36px; font-weight: 800; color: white; text-align: center;">${nom}</div>
-                        <div style="font-size: 48px; font-weight: bold; margin: 20px 0; color: #FFD700;">-50%</div>
-                        <div style="font-size: 18px; color: rgba(255,255,255,0.9);">Offre valable jusqu'au 30/04</div>
+                    <div style="background: linear-gradient(135deg, #0a0a0a, #1a0033); width: ${largeur}px; height: ${hauteur}px; border: 2px solid ${couleurFleur}; border-radius: 30px; padding: 20px; text-align: center; box-shadow: 0 0 30px ${couleurFleur}; position: relative;">
+                        <div style="position: absolute; top: 10px; right: 15px; font-size: 20px;">🌸</div>
+                        <div style="margin-top: 40px;">
+                            <div style="font-size: 60px;">🌹</div>
+                            <div style="font-size: 28px; font-weight: bold; margin: 15px 0; color: ${couleurFleur}; text-shadow: 0 0 10px ${couleurFleur};">${nom}</div>
+                            <div style="font-size: 14px; color: #ff99cc; margin: 10px 0;">${soustitre || "Âme sauvage, cœur pur"}</div>
+                            <div style="border-top: 1px dashed ${couleurFleur}; margin: 20px 0; width: 80%; margin-left: auto; margin-right: auto;"></div>
+                            <div style="font-size: 11px; color: ${couleurFleur};">${stats || "INFO PURGE 24"}</div>
+                        </div>
                     </div>
                 `;
             }
             
-            if(type === "carte") {
-                largeur = 350; hauteur = 200;
+            if(type === "recompense_premium") {
+                hauteur = 500;
+                const couleurOr = "#FFD700";
                 designHTML = `
-                    <div style="background: linear-gradient(135deg, ${couleur}, #000); width: ${largeur}px; height: ${hauteur}px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 15px; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
-                        <div style="font-size: 40px; margin-bottom: 10px;">${icone}</div>
-                        <div style="font-size: 20px; font-weight: 800; color: white;">${nom}</div>
-                        <div style="font-size: 12px; margin-top: 10px; color: rgba(255,255,255,0.8);">📞 +221 77 000 00 00</div>
-                        <div style="font-size: 10px; color: rgba(255,255,255,0.7);">📧 contact@${nom.replace(/ /g,'').toLowerCase()}.com</div>
+                    <div style="background: linear-gradient(135deg, #1a1a00, #000000); width: ${largeur}px; height: ${hauteur}px; border: 3px solid ${couleurOr}; border-radius: 20px; padding: 20px; text-align: center; box-shadow: 0 0 40px ${couleurOr}; position: relative;">
+                        <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: ${couleurOr}; color: black; padding: 5px 20px; border-radius: 20px; font-size: 12px; font-weight: bold;">🏆 PRIME D'EXCELLENCE 🏆</div>
+                        <div style="margin-top: 50px;">
+                            <div style="font-size: 48px; margin-bottom: 10px;">👑</div>
+                            <div style="font-size: 32px; font-weight: bold; color: ${couleurOr}; text-shadow: 0 0 15px ${couleurOr}; letter-spacing: 2px;">${nom}</div>
+                            <div style="font-size: 16px; color: ${couleurOr}; margin: 15px 0; background: rgba(255,215,0,0.1); display: inline-block; padding: 5px 20px; border-radius: 20px;">⭐ ${soustitre || "PURGEUR D'ÉLITE"} ⭐</div>
+                            <div style="margin: 20px 0;">
+                                <span style="background: ${couleurOr}; color: black; padding: 5px 15px; border-radius: 15px; font-size: 12px; margin: 0 5px;">🔴 BAN</span>
+                                <span style="background: ${couleurOr}; color: black; padding: 5px 15px; border-radius: 15px; font-size: 12px; margin: 0 5px;">💀 SPAM</span>
+                            </div>
+                            <div style="font-size: 28px; font-weight: bold; color: ${couleurOr}; margin: 15px 0;">${stats || "10000 LVL 1"}</div>
+                            <div style="border-top: 1px solid ${couleurOr}; margin: 20px 0; padding-top: 10px;">
+                                <div style="font-size: 11px; color: ${couleurOr};">🏅 DÉCERNÉ PAR INFO PURGE 24 🏅</div>
+                                <div style="font-size: 10px; color: ${couleurOr}; margin-top: 5px;">"Le respect ne se demande pas" - Joyboy</div>
+                            </div>
+                        </div>
                     </div>
                 `;
             }
             
-            const resultatDiv = document.getElementById('resultat');
-            resultatDiv.innerHTML = `
-                <div class="fade-in" style="text-align: center;">
+            document.getElementById('resultat').innerHTML = `
+                <div style="text-align: center;">
                     <div class="design-preview">
                         ${designHTML}
                     </div>
@@ -490,72 +367,60 @@
                 </div>
             `;
             
-            // Stocker le design actuel pour sauvegarde
-            window.designActuel = { type, nom, couleur, icone, description, html: designHTML };
+            window.designActuel = { type, nom, soustitre, couleur, stats, html: designHTML };
         }
         
         function sauvegarderDesign() {
             if(!window.designActuel) return;
-            
             const id = Date.now();
             const design = {
                 id: id,
                 type: window.designActuel.type,
                 nom: window.designActuel.nom,
-                couleur: window.designActuel.couleur,
-                icone: window.designActuel.icone,
                 html: window.designActuel.html,
                 date: new Date().toLocaleString()
             };
-            
             designsSauvegardes.push(design);
-            localStorage.setItem('ia_designs', JSON.stringify(designsSauvegardes));
+            localStorage.setItem('purge_designs', JSON.stringify(designsSauvegardes));
             afficherGalerie();
             alert("✅ Design sauvegardé !");
         }
         
         function telechargerDesign() {
-            const resultatDiv = document.getElementById('resultat');
-            const designElement = resultatDiv.querySelector('.design-preview');
+            const designElement = document.querySelector('.design-preview');
             if(designElement) {
                 html2canvas(designElement).then(canvas => {
                     const link = document.createElement('a');
-                    link.download = 'design.png';
+                    link.download = 'purge-design.png';
                     link.href = canvas.toDataURL();
                     link.click();
-                }).catch(() => {
-                    alert("📸 Faites une capture d'écran du design");
                 });
-            } else {
-                alert("Génère d'abord un design !");
             }
         }
         
         function afficherGalerie() {
             const grid = document.getElementById('gallery-grid');
             if(designsSauvegardes.length === 0) {
-                grid.innerHTML = '<p style="color: #888; text-align: center;">Aucun design sauvegardé</p>';
+                grid.innerHTML = '<p style="color: #666;">Aucune création sauvegardée</p>';
                 return;
             }
-            
             grid.innerHTML = designsSauvegardes.map(design => `
-                <div class="gallery-card" onclick="afficherDesignSauvegarde(${design.id})">
-                    <div style="background: ${design.couleur}; border-radius: 12px; padding: 15px; text-align: center;">
-                        <div style="font-size: 40px;">${design.icone}</div>
-                        <div style="font-weight: bold; font-size: 12px; margin-top: 10px;">${design.nom}</div>
+                <div class="gallery-card" onclick="restaurerDesign(${design.id})">
+                    <div style="background: #1a0000; border-radius: 8px; padding: 10px;">
+                        <div style="font-size: 30px;">${design.type === 'banniere_clan' ? '🏆' : design.type === 'carte_purgeur' ? '👑' : design.type === 'fleur_sombre' ? '🌸' : design.type === 'recompense_premium' ? '🏅' : '📰'}</div>
+                        <div style="font-size: 12px; margin-top: 5px;">${design.nom}</div>
                     </div>
-                    <div class="name">${design.type.toUpperCase()}</div>
-                    <div class="date">${design.date}</div>
+                    <div style="font-size: 10px; margin: 5px 0;">${design.date}</div>
                     <button class="delete-btn" onclick="event.stopPropagation(); supprimerDesign(${design.id})">🗑 Supprimer</button>
                 </div>
             `).join('');
         }
         
-        function afficherDesignSauvegarde(id) {
+        function restaurerDesign(id) {
             const design = designsSauvegardes.find(d => d.id === id);
             if(design) {
                 document.getElementById('resultat').innerHTML = `
-                    <div class="fade-in" style="text-align: center;">
+                    <div style="text-align: center;">
                         <div class="design-preview">
                             ${design.html}
                         </div>
@@ -569,23 +434,16 @@
         
         function supprimerDesign(id) {
             designsSauvegardes = designsSauvegardes.filter(d => d.id !== id);
-            localStorage.setItem('ia_designs', JSON.stringify(designsSauvegardes));
+            localStorage.setItem('purge_designs', JSON.stringify(designsSauvegardes));
             afficherGalerie();
         }
         
-        // Charger les designs sauvegardés au démarrage
-        const saved = localStorage.getItem('ia_designs');
+        const saved = localStorage.getItem('purge_designs');
         if(saved) {
             designsSauvegardes = JSON.parse(saved);
             afficherGalerie();
         }
-        
-        // Générer les particules
-        genererParticules();
     </script>
-    
-    <!-- Bibliothèque html2canvas pour téléchargement -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </body>
 </html>
-joyboy
+Joyboy 
