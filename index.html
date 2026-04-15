@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA Design Pro - Créateur de designs par IA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 IA DESIGN PRO</h1>
+        <div class="subtitle">Créez logos, flyers, cartes en 1 clic</div>
+
+        <div class="input-group">
+            <label>📋 Type de design</label>
+            <select id="type">
+                <option value="logo">Logo</option>
+                <option value="flyer">Flyer / Affiche</option>
+                <option value="carte">Carte de visite</option>
+                <option value="affiche">Affiche promotionnelle</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>📝 Nom / Texte principal</label>
+            <input type="text" id="nom" placeholder="Nom de votre entreprise / Produit">
+        </div>
+
+        <div class="input-group">
+            <label>🎨 Couleur principale</label>
+            <input type="color" id="couleur" value="#ff6b6b">
+        </div>
+
+        <div class="input-group">
+            <label>📄 Description détaillée (pour l'IA)</label>
+            <textarea id="description" rows="3" placeholder="Ex: Logo pour salon de coiffure, style élégant, avec des ciseaux et un peigne..."></textarea>
+        </div>
+
+        <div class="double-boutons">
+            <button class="btn-template" onclick="genererTemplate()">🎨 GÉNÉRER (Template)</button>
+            <button class="btn-ia" onclick="genererIA()">🤖 GÉNÉRER (IA)</button>
+        </div>
+
+        <div class="warning">
+            ⚠️ <strong>Mode IA (DALL-E) :</strong> Nécessite une clé API OpenAI.<br>
+            💰 <strong>Prix par image :</strong> 0,02$ - 0,08$ (2-8 FCFA)<br>
+            📱 <strong>Mode Template :</strong> Gratuit, instantané, sans inscription.
+        </div>
+
+        <div id="resultat">
+            <p style="color: #888;">Votre design apparaîtra ici</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
